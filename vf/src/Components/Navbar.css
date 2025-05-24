@@ -1,0 +1,13 @@
+.Navbar-container{
+    border: 1px solid black;
+    display: flex;
+
+}
+.Navbar-Title{
+    text-decoration: none;
+    margin:2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    
+
+}
