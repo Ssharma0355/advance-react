@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from './Components/Navbar';
-import Home from './pages/Home';
-import About from './pages/About';
-import ContectUs from './pages/ContectUs';
+import Navbar from "./Components/Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import ContectUs from "./pages/ContectUs";
+import Login from "./Components/Login";
+import Protected from "./Components/Protected";
 
 function App() {
   return (
@@ -11,7 +13,15 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <Protected>
+                <Home />
+              </Protected>
+            }
+          />
+          <Route path="/login" element={<Login />} />
           <Route path="/aboutus" element={<About />} />
           <Route path="/contactus" element={<ContectUs />} />
         </Routes>
@@ -20,4 +30,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
